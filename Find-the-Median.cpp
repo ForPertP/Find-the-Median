@@ -13,12 +13,6 @@ vector<string> split(const string &);
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
-int findMedian(vector<int> arr)
-{
-    std::sort(arr.begin(), arr.end());
-    
-    return arr[arr.size()/2];
-}
 
 
 
