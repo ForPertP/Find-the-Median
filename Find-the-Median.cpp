@@ -20,6 +20,24 @@ int findMedian(vector<int> arr)
     return arr[arr.size()/2];
 }
 
+
+
+int findMedian(vector<int> arr) {
+    srand(time(nullptr));
+    int n = arr.size();
+    int midIndex = n / 2;
+    return quickselect(arr, 0, n - 1, midIndex);
+}
+
+
+int findMedian2(vector<int> arr) {
+    std::sort(arr.begin(), arr.end());
+    
+    return arr[arr.size()/2];
+}
+
+
+
 string ltrim(const string &str)
 {
     string s(str);
