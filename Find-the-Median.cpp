@@ -45,6 +45,19 @@ int findMedian2(vector<int> arr) {
     return arr[arr.size()/2];
 }
 
+int quickselect(vector<int>& arr, int left, int right, int k) {
+    if (left == right) return arr[left];
+
+    int pivotIndex = partition(arr, left, right);
+
+    if (pivotIndex == k) {
+        return arr[pivotIndex];
+    } else if (pivotIndex > k) {
+        return quickselect(arr, left, pivotIndex - 1, k);
+    } else {
+        return quickselect(arr, pivotIndex + 1, right, k);
+    }
+}
 
 
 string ltrim(const string &str)
