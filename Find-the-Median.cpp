@@ -13,7 +13,22 @@ vector<string> split(const string &);
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 
+int partition(vector<int>& arr, int left, int right) {
+    int pivotIndex = left + rand() % (right - left + 1);
+    swap(arr[pivotIndex], arr[right]);
 
+    int pivot = arr[right];
+    int i = left;
+
+    for (int j = left; j < right; j++) {
+        if (arr[j] <= pivot) {
+            swap(arr[i], arr[j]);
+            i++;
+        }
+    }
+    swap(arr[i], arr[right]);
+    return i;
+}
 
 
 int findMedian(vector<int> arr) {
