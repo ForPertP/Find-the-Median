@@ -60,6 +60,13 @@ int quickselect(vector<int>& arr, int left, int right, int k) {
 }
 
 
+int findMedian(vector<int> arr) {
+    srand(time(nullptr));
+    int n = arr.size();
+    int midIndex = n / 2;
+    return quickselect(arr, 0, n - 1, midIndex);
+}
+
 string ltrim(const string &str)
 {
     string s(str);
