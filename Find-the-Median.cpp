@@ -30,21 +30,6 @@ int partition(vector<int>& arr, int left, int right) {
     return i;
 }
 
-
-int findMedian(vector<int> arr) {
-    srand(time(nullptr));
-    int n = arr.size();
-    int midIndex = n / 2;
-    return quickselect(arr, 0, n - 1, midIndex);
-}
-
-
-int findMedian2(vector<int> arr) {
-    std::sort(arr.begin(), arr.end());
-    
-    return arr[arr.size()/2];
-}
-
 int quickselect(vector<int>& arr, int left, int right, int k) {
     if (left == right) return arr[left];
 
@@ -58,7 +43,6 @@ int quickselect(vector<int>& arr, int left, int right, int k) {
         return quickselect(arr, pivotIndex + 1, right, k);
     }
 }
-
 
 int findMedian(vector<int> arr) {
     srand(time(nullptr));
