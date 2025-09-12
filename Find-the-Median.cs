@@ -22,6 +22,14 @@ class Result
         arr[i] = arr[j];
         arr[j] = temp;
     }    
+
+    public static int findMedian(List<int> arr)
+    {
+        int n = arr.Count;
+        int midIndex = n / 2;
+        return QuickSelect(arr, 0, n - 1, midIndex);
+    }
+    
 }
 
 class Solution
