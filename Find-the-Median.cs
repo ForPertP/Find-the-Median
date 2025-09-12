@@ -14,6 +14,14 @@ using System;
 
 class Result
 {
+    static Random rand = new Random();
+    
+    static void Swap(List<int> arr, int i, int j)
+    {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }    
 }
 
 class Solution
