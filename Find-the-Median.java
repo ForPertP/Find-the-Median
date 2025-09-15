@@ -21,6 +21,24 @@ lass Result {
 
     static Random rand = new Random();
 
+    static int partition(List<Integer> arr, int left, int right) {
+        int pivotIndex = left + rand.nextInt(right - left + 1);
+        Collections.swap(arr, pivotIndex, right);
+
+        int pivot = arr.get(right);
+        int i = left;
+
+        for (int j = left; j < right; j++) {
+            if (arr.get(j) <= pivot) {
+                Collections.swap(arr, i, j);
+                i++;
+            }
+        }
+        Collections.swap(arr, i, right);
+        return i;
+    }
+
+    
     public static int findMedian(List<Integer> arr) {
     // Write your code here
 
