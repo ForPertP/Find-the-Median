@@ -55,7 +55,8 @@ class Result {
     public static int findMedian(List<Integer> arr) {
         int n = arr.size();
         int midIndex = n / 2;
-        return quickselect(new ArrayList<>(arr), 0, n - 1, midIndex);
+        //return quickselect(new ArrayList<>(arr), 0, n - 1, midIndex);
+        return quickselect(arr, 0, n - 1, midIndex);
     }
 
 
