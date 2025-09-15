@@ -59,7 +59,11 @@ class Result {
     }
 
 
-
+    public static int findMedian2(List<Integer> arr) {
+        List<Integer> copy = new ArrayList<>(arr);
+        Collections.sort(copy);
+        return copy.get(copy.size() / 2);
+    }
 }
 
 
