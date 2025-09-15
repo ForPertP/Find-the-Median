@@ -10,7 +10,7 @@ import java.util.stream.*;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
-lass Result {
+class Result {
 
     /*
      * Complete the 'findMedian' function below.
@@ -38,14 +38,21 @@ lass Result {
         return i;
     }
 
-    
-    public static int findMedian(List<Integer> arr) {
-    // Write your code here
+    static int quickselect(List<Integer> arr, int left, int right, int k) {
+        if (left == right) return arr.get(left);
 
+        int pivotIndex = partition(arr, left, right);
+
+        if (pivotIndex == k) {
+            return arr.get(pivotIndex);
+        } else if (pivotIndex > k) {
+            return quickselect(arr, left, pivotIndex - 1, k);
+        } else {
+            return quickselect(arr, pivotIndex + 1, right, k);
+        }
     }
 
 }
-
 
 
 public class Solution {
