@@ -19,6 +19,8 @@ lass Result {
      * The function accepts INTEGER_ARRAY arr as parameter.
      */
 
+    static Random rand = new Random();
+
     public static int findMedian(List<Integer> arr) {
     // Write your code here
 
