@@ -76,6 +76,7 @@ class Result
     {
         int n = arr.Count;
         int midIndex = n / 2;
+        //return QuickSelect(new List<int>(arr), 0, n - 1, midIndex);
         return QuickSelect(arr, 0, n - 1, midIndex);
     }
 
